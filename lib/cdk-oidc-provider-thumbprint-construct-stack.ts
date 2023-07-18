@@ -1,16 +1,17 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import { Thumbprint } from "./thumbprint";
 
 export class CdkOidcProviderThumbprintConstructStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
+    const resource = new Thumbprint(this, 'Thumbprint', {
+      url: 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789',
+    });
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'CdkOidcProviderThumbprintConstructQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    new cdk.CfnOutput(this, 'Thumbprints', {
+      value: resource.thumbprints,
+    });
   }
 }

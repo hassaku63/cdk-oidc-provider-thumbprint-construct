@@ -1,14 +1,7 @@
-# Welcome to your CDK TypeScript project
+# README
 
-This is a blank project for CDK development with TypeScript.
+Concept implementation of a Thumbprint CDK Construct.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+Reference issue: https://github.com/aws/aws-cdk/issues/21197
 
-## Useful commands
-
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+Reference RFC proposal issue: https://github.com/aws/aws-cdk-rfcs/issues/512
